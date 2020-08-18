@@ -6,11 +6,13 @@ class Player(object):
     def __init__(self, name):
         self.name = name
         self.hp = randint(900, 2000)
+        if self.name == "意大利炮":
+            self.hp = 100000 # :P
         self.dead = False
 
-    def be_attacked(self):
+    def be_attacked(self, attacker=''):
         decrease = randint(50, 200)
-        if self.lucky():  # hiahiahia :P
+        if self.lucky() or attacker == "意大利炮":  # hiahiahia :P
             print("暴击")
             decrease = randint(500, 1000)
         self.hp -= decrease
@@ -22,11 +24,6 @@ class Player(object):
             return True
         return False
 
-
-print("Simple Command Line RPG Game By Andy")
-print("Copyright(c) all rights reserved")
-print("Version: 1.0")
-print("-" * 50)
 print("游戏开始")
 while True:
     num_of_players = input("输入玩家数量：")
@@ -73,7 +70,7 @@ def mainloop():
                 if attacked_player.dead:
                     print("不能攻击已死亡的玩家")
                     continue
-                attacked_player.be_attacked()
+                attacked_player.be_attacked(player.name)
                 if attacked_player.dead:
                     print(f"玩家{attacked_player.name}死亡")
                     counter -= 1  # 将存活数量 - 1
@@ -89,8 +86,8 @@ def mainloop():
         for player in players:
             if not player.dead:
                 eat_increase = randint(20, 40)
-                if player.lucky():
-                    eat_increase = randint(500, 1000)
+                if player.lucky() or player.name == "冬泳怪鸽":
+                    eat_increase = randint(1000, 2000)
                     print(f"{player.name}运气爆棚，", end='')
                 player.hp += eat_increase
                 print(f"玩家{player.name}增加血量{eat_increase}")

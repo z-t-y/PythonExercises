@@ -1,3 +1,14 @@
-# 一个小型命令行RPG游戏
-由[GreyLi/PythonExercises#6](https://github.com/greyli/PythonExercises#6-%E6%96%87%E5%AD%97%E5%86%92%E9%99%A9%E6%B8%B8%E6%88%8F)得到灵感
+# PythonExercises
+完成[GreyLi/PythonExercises](https://github.com/greyli/PythonExercises)上的练习
 
+# Progress
+1. 猜数字 [Done] :)
+2. FizzBuzz [Done] :)
+3. 猜数字的AI
+4. 整点报时
+5. 敏感词审查
+6. 文字冒险游戏 [变成了多人格斗游戏] :(
+7. 词频统计
+8. Markdown转换器
+9. 邮件轰炸机
+10. 用邮件控制电脑
